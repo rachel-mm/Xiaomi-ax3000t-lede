@@ -37,7 +37,7 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     env:
-      KERNEL_VERSION: '5.15' # 可选内核版本 6.6 | 6.1 | 5.15 | 5.10 | 5.4
+      KERNEL_VERSION: '6.6' # 可选内核版本 6.6 | 6.1 | 5.15 | 5.10 | 5.4
 
     steps:
     - name: Checkout
@@ -68,8 +68,8 @@ jobs:
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
-        git checkout b743ccd20ce48beee1b283415b74b462b916c3b6
-        git checkout -b b743ccd
+        #git checkout b743ccd20ce48beee1b283415b74b462b916c3b6
+        #git checkout -b b743ccd
         sed -i "s/^KERNEL_PATCHVER:=.*$/KERNEL_PATCHVER:=$KERNEL_VERSION/" target/linux/mediatek/Makefile
         sed -i "s/^KERNEL_TESTING_PATCHVER:=.*$/KERNEL_TESTING_PATCHVER:=$KERNEL_VERSION/" target/linux/mediatek/Makefile
         $GITHUB_WORKSPACE/$DIY_P1_SH
