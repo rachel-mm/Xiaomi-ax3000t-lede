@@ -67,7 +67,7 @@ jobs:
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
-        cd openwrt
+        #cd openwrt
         #git checkout b743ccd20ce48beee1b283415b74b462b916c3b6
         #git checkout -b b743ccd
         #sed -i "s/^KERNEL_PATCHVER:=.*$/KERNEL_PATCHVER:=$KERNEL_VERSION/" target/linux/mediatek/Makefile
